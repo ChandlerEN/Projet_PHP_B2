@@ -41,59 +41,7 @@
                                     <?= $contact['nom_i'] ?>
                                 </h4>
                             </div>
-                            <div class="section2__utilisateur__role">
-                                <form method="POST" id="<?= $contact['id_i'] ?>">
-                                <?php for ($i = 0; $i < 5; $i++):?>
-                                    <?php
-                                        $realRole;
-                                            switch ($i) {
-                                                    case 0: if ($contact['role_i'] == 'B1') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    
-                                                    case 1: if ($contact['role_i'] == 'B2') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 2: if ($contact['role_i'] == 'B3') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 3: if ($contact['role_i'] == 'M1') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 4: if ($contact['role_i'] == 'M2') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    default:
-                                                        $inactive;
-                                                        break;
-                                                }
-                                     ?>
-                                     
-                                        <button <?= $realRole ?>><?= $role[$i] ?></button>
-                                    
-                                <?php endfor; ?>
-                                </form>
-                            </div>
+                            
                             <div class="section2__utilisateur__mail">
                                 <p<?php if ($contact['ban_i']): ?>
                                         style="color: red;"
@@ -127,6 +75,11 @@
                         <div class="section4__article__content">
                             <h4><?= $article['titre_a'] ?></h4>
                             <p><?= $article['contenu_a'] ?></p>
+                            <span><?= $article['date_a'] ?></span>
+                            <br>
+                            <span><?= var_dump($trueNameUser[$article['user_a']][0] )?></span>
+                            <span><?= $trueNameUser[var_dump($article['user_a'])][0] ?></span>
+                            <span><?= $trueNameUser[$article['user_a']][0] ?></span>
                         </div>
                         <form method="POST">
                             <input type="hidden" name="delete" value="<?= $article['id_a'] ?>">

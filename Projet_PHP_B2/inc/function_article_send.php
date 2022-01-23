@@ -10,7 +10,7 @@ $titre = $_POST['title'];
 $contenu = $_POST['message'];
 $image = $_POST['file'];
 
-	$pdoStat = $pdo->prepare('INSERT INTO `article` (`id_a`, `titre_a`, `contenu_a`, `image_a`) VALUES (NULL, :titre_a, :contenu_a, :image_a)');
+	$pdoStat = $pdo->prepare('INSERT INTO `article` (`id_a`, `titre_a`, `contenu_a`, `image_a`) VALUES (NULL, :titre_a, :contenu_a, :image_a, NULL, NULL)');
 
 	$pdoStat->bindValue(':titre_a', $titre, PDO::PARAM_STR);
 	$pdoStat->bindValue(':contenu_a', $contenu, PDO::PARAM_STR);
