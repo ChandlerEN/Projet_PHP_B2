@@ -9,8 +9,7 @@ $destination = "./assets/IMG/article/";
 $titre = $_POST['title'];
 $contenu = $_POST['message'];
 $image = $_POST['file'];
-
-	$pdoStat = $pdo->prepare('INSERT INTO `article` (`id_a`, `titre_a`, `contenu_a`, `image_a`) VALUES (NULL, :titre_a, :contenu_a, :image_a)');
+	$pdoStat = $pdo->prepare('INSERT INTO `article` (`id_a`, `titre_a`, `contenu_a`, `image_a`, `date_a`, `user_a`) VALUES (NULL, :titre_a, :contenu_a, :image_a, CURRENT_DATE, 2)');
 
 	$pdoStat->bindValue(':titre_a', $titre, PDO::PARAM_STR);
 	$pdoStat->bindValue(':contenu_a', $contenu, PDO::PARAM_STR);

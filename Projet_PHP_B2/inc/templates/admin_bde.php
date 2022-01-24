@@ -74,6 +74,18 @@
                         <div class="section4__article__content">
                             <h4><?= $article['titre_a'] ?></h4>
                             <p><?= $article['contenu_a'] ?></p>
+                            <br>
+                            <span class="details-txt">
+                                <span><?= $article['date_a'] ?></span>
+                                <br>
+                                <?php for ($i = 0; $i < count($contacts); $i++): ?>
+                                    <?php if ($contacts[$i][0] === $article['user_a']): ?>
+                                        <span><?= $contacts[$i][1] ?></span>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </span>
+                            <br>
+                            <button onclick="myFunction()">Details</button>
                         </div>
                         <form method="POST">
                             <input type="hidden" name="delete" value="<?= $article['id_a'] ?>">
@@ -81,6 +93,28 @@
                                 <button><img src="./assets/IMG/cross.svg"></button>
                             </div>
                         </form>
+                        
+                    <div class="section4__article__sumbit">
+                        <form method="POST">
+                            <div>
+                                <textarea type="text" name="title" id="title" required placeholder="Ecrire le titre ici..."></textarea>
+                                <br />
+                                <textarea type="text" name="message" required placeholder="Ecrire le message ici..."></textarea>
+                            </div>
+
+                            <div>
+                                <input type="file" id="file" name="file" accept="image/png, image/jpeg, image/svg">
+                                <label for="file"><img src="./assets/IMG/add.svg" alt="add_file"></label>
+                            </div>
+
+                            <div>
+                                <input type="submit" name="edit" value="" id="edit">
+                                <label for="edit"><img src="./assets/IMG/submit.svg" alt="edit__tchat"></label>
+                            </div>
+
+                        </form>
+                    </div>
+
                     </div>
                 <?php endforeach; ?>
 

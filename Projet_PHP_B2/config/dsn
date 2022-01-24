@@ -1,1 +1,1 @@
-mysql:host=projetphpb2;dbname=projet_php_b2
+mysql:host=localhost;dbname=projet_php_b2

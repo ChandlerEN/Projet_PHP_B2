@@ -51,6 +51,7 @@
     </section>
 
     <script src="./assets/JS/_button.js"></script>
+    <script src="./assets/JS/btn-details.js"></script>
 </body>
 
 </html>

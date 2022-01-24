@@ -423,6 +423,13 @@ body {
     line-height: 30px;
     color: #000000;
 }
+.details-txt{
+    display: none;
+}
+
+.details-txt--show{
+    display: block;
+}
 /* -----------------------------------FORUM---------------------------------- */
 .section5{
     width: 100vw;
