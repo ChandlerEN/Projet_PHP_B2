@@ -58,17 +58,63 @@ body {
     position: absolute;
     display: flex;
     top: 15px;
-    right: 20px;
+    right: 115px;
     width: 150px;
     justify-content: space-between;
 }
 
-.section1__topbar a {
+.section1__topbar #click-deco{
     align-self: center;
     font-weight: 600;
     font-size: 1.1rem;
     color: #3A3232;
     padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    transition: 0.5s;
+}
+
+.section1__topbar #click-profil{
+    align-self: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #3A3232;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    transition: 0.5s;
+}
+
+.section1__topbar #click-retour{
+    align-self: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #3A3232;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    transition: 0.5s;
+}
+
+.section1__topbar #click-deco:hover
+{
+    background-color: #3B877E;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.section1__topbar #click-profil:hover
+{
+    background-color: #3B877E;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.section1__topbar #click-retour:hover
+{
+    background-color: #3B877E;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 /* ------------------------------- BURGER-MENU ------------------------------ */
@@ -376,6 +422,13 @@ body {
     font-weight: 150;
     line-height: 30px;
     color: #000000;
+}
+.details-txt{
+    display: none;
+}
+
+.details-txt--show{
+    display: block;
 }
 /* -----------------------------------FORUM---------------------------------- */
 .section5{

@@ -3,7 +3,8 @@
         <section class="section1">
 
             <div class="section1__topbar">
-                <a href="#">CONNEXION</a>
+                <div id="click-profil">PROFIL</div>
+                <div id="click-deco">DECONNEXION</div>
                 <div class="burger" id="burger-icon">
                     <div></div>
                 </div>
@@ -28,7 +29,6 @@
             <div class="section__block">
                 <h2 class="titre">UTILISATEUR</h2>
                 <div class="section2__container">
-
                         <?php foreach ($contacts as $contact): ?>
                         <div class="section2__utilisateur">
                             <div class="section2__utilisateur__img">
@@ -40,59 +40,6 @@
                                     <?php endif; ?>>
                                     <?= $contact['nom_i'] ?>
                                 </h4>
-                            </div>
-                            <div class="section2__utilisateur__role">
-                                <form method="POST" id="<?= $contact['id_i'] ?>">
-                                <?php for ($i = 0; $i < 5; $i++):?>
-                                    <?php
-                                        $realRole;
-                                            switch ($i) {
-                                                    case 0: if ($contact['role_i'] == 'B1') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    
-                                                    case 1: if ($contact['role_i'] == 'B2') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 2: if ($contact['role_i'] == 'B3') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 3: if ($contact['role_i'] == 'M1') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 4: if ($contact['role_i'] == 'M2') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    default:
-                                                        $inactive;
-                                                        break;
-                                                }
-                                     ?>
-                                     
-                                        <button <?= $realRole ?>><?= $role[$i] ?></button>
-                                    
-                                <?php endfor; ?>
-                                </form>
                             </div>
                             <div class="section2__utilisateur__mail">
                                 <p<?php if ($contact['ban_i']): ?>
@@ -127,6 +74,18 @@
                         <div class="section4__article__content">
                             <h4><?= $article['titre_a'] ?></h4>
                             <p><?= $article['contenu_a'] ?></p>
+                            <br>
+                            <span class="details-txt">
+                                <span><?= $article['date_a'] ?></span>
+                                <br>
+                                <?php for ($i = 0; $i < count($contacts); $i++): ?>
+                                    <?php if ($contacts[$i][0] === $article['user_a']): ?>
+                                        <span><?= $contacts[$i][1] ?></span>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </span>
+                            <br>
+                            <button onclick="myFunction()">Details</button>
                         </div>
                         <form method="POST">
                             <input type="hidden" name="delete" value="<?= $article['id_a'] ?>">
@@ -134,6 +93,28 @@
                                 <button><img src="./assets/IMG/cross.svg"></button>
                             </div>
                         </form>
+                        
+                    <div class="section4__article__sumbit">
+                        <form method="POST">
+                            <div>
+                                <textarea type="text" name="title" id="title" required placeholder="Ecrire le titre ici..."></textarea>
+                                <br />
+                                <textarea type="text" name="message" required placeholder="Ecrire le message ici..."></textarea>
+                            </div>
+
+                            <div>
+                                <input type="file" id="file" name="file" accept="image/png, image/jpeg, image/svg">
+                                <label for="file"><img src="./assets/IMG/add.svg" alt="add_file"></label>
+                            </div>
+
+                            <div>
+                                <input type="submit" name="edit" value="" id="edit">
+                                <label for="edit"><img src="./assets/IMG/submit.svg" alt="edit__tchat"></label>
+                            </div>
+
+                        </form>
+                    </div>
+
                     </div>
                 <?php endforeach; ?>
 
