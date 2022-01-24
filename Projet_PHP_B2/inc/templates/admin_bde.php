@@ -3,7 +3,8 @@
         <section class="section1">
 
             <div class="section1__topbar">
-                <a href="#">CONNEXION</a>
+                <div id="click-profil">PROFIL</div>
+                <div id="click-deco">DECONNEXION</div>
                 <div class="burger" id="burger-icon">
                     <div></div>
                 </div>
@@ -28,7 +29,6 @@
             <div class="section__block">
                 <h2 class="titre">UTILISATEUR</h2>
                 <div class="section2__container">
-
                         <?php foreach ($contacts as $contact): ?>
                         <div class="section2__utilisateur">
                             <div class="section2__utilisateur__img">
@@ -40,59 +40,6 @@
                                     <?php endif; ?>>
                                     <?= $contact['nom_i'] ?>
                                 </h4>
-                            </div>
-                            <div class="section2__utilisateur__role">
-                                <form method="POST" id="<?= $contact['id_i'] ?>">
-                                <?php for ($i = 0; $i < 5; $i++):?>
-                                    <?php
-                                        $realRole;
-                                            switch ($i) {
-                                                    case 0: if ($contact['role_i'] == 'B1') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    
-                                                    case 1: if ($contact['role_i'] == 'B2') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 2: if ($contact['role_i'] == 'B3') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 3: if ($contact['role_i'] == 'M1') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    case 4: if ($contact['role_i'] == 'M2') {
-                                                            $realRole = $active;
-                                                        }
-                                                        else  {
-                                                            $realRole = $inactive;
-                                                        }
-                                                        break;
-                                                    default:
-                                                        $inactive;
-                                                        break;
-                                                }
-                                     ?>
-                                     
-                                        <button <?= $realRole ?>><?= $role[$i] ?></button>
-                                    
-                                <?php endfor; ?>
-                                </form>
                             </div>
                             <div class="section2__utilisateur__mail">
                                 <p<?php if ($contact['ban_i']): ?>
