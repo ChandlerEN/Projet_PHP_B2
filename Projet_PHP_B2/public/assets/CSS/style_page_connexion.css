@@ -1,0 +1,48 @@
+body
+{
+    font-family: "Arial";
+}
+main
+{
+    padding-top: 20em;
+}
+
+
+div#info-principal
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+img.pp
+{
+    border-radius: 50%;
+}
+.image-upload>input#file-input
+{
+    display: none;
+}
+
+div.user
+{
+    display: flex;
+    
+    margin: 1em;
+    
+    flex-direction: column;
+}
+div.user h2
+{
+    margin: 0;
+}
+div.user h3
+{
+    font-size: 0.8em;
+    margin-top: 0.1em;
+}
+
+button a
+{
+    text-decoration: none;
+    color : black;
+}

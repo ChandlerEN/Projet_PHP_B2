@@ -3,7 +3,8 @@
         <section class="section1">
 
             <div class="section1__topbar">
-                <a href="#">CONNEXION</a>
+                <div id="click-profil">PROFIL</div>
+                <div id="click-deco">DECONNEXION</div>
                 <div class="burger" id="burger-icon">
                     <div></div>
                 </div>
@@ -28,7 +29,6 @@
             <div class="section__block">
                 <h2 class="titre">UTILISATEUR</h2>
                 <div class="section2__container">
-
                         <?php foreach ($contacts as $contact): ?>
                         <div class="section2__utilisateur">
                             <div class="section2__utilisateur__img">
@@ -41,7 +41,6 @@
                                     <?= $contact['nom_i'] ?>
                                 </h4>
                             </div>
-                            
                             <div class="section2__utilisateur__mail">
                                 <p<?php if ($contact['ban_i']): ?>
                                         style="color: red;"
