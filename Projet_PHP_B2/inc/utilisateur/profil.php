@@ -3,7 +3,6 @@
         require_once("./../inc/utilisateur/connexion_utilisateur.php");
         require_once('./../inc/utilisateur/photo_de_profil.php');
         require_once('./../inc/utilisateur/user.php');
-        require_once("./../inc/utilisateur/upload.php")
     ?>
     
     <section class="site">
@@ -19,7 +18,7 @@
 
             <center>
                 <div class="section1__title" id="info-principal">
-                    <form class="image-upload" action="." method="post" enctype="multipart/form-data">
+                    <form class="image-upload" action="<?php upload($pdo); ?>" method="post" enctype="multipart/form-data">
                         <label for="file-input">
                             <img id="pp" src="<?php echo chargement_pp ($pdo, $_COOKIE['id']); ?>" width="100px" height="100px">
                         </label>

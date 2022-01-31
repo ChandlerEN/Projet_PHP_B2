@@ -17,15 +17,14 @@ function inscription($pdo) : void
             $statement->bindValue(':mdp_i', password_hash($mdp, PASSWORD_BCRYPT));
             $statement->execute();
             
-            $AllStatement = $pdo->prepare ("SELECT * FROM inscrit WHERE mail_i = :mail_i");
-            $AllStatement->bindValue(':mail_i', $email);
-            $AllStatement->execute();
+            $IDStatement = $pdo->prepare ("SELECT id_i FROM inscrit WHERE mail_i = :mail_i");
+            $IDStatement->bindValue(':mail_i', $email);
+            $IDStatement->execute();
             
-            $result = $AllStatement->fetch();
-            
+            $result = $IDStatement->fetch();
             $domain = ($_SERVER['HTTP_HOST'] != 'projetphpb2') ? $_SERVER['HTTP_HOST'] : false;
             setcookie('id', $result[0], time()+3600, '/', $domain);
-            setcookie('cookie_email', $result[1], time()+3600, '/', $domain);
+            setcookie('cookie_email', $email, time()+3600, '/', $domain);
             header("Refresh:0");
         }
         
